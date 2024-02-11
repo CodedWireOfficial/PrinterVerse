@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrintVerse-checkout</title>
+    <h1>Checkout</h1>
+    <script>
+    function calculateTotal() {
+    // Get the value entered by the user
+    var itemCount = document.getElementById("item-count").value;
+    
+    // Check if the input contains only numeric values
+    if (!/^\d+$/.test(itemCount)) {
+        alert("Please enter a valid number");
+        return;
+    }
+    
+    // Calculate the total price (each item costs $1)
+    var totalPrice = itemCount * 1;
+
+    // Display the total price and item count
+    document.getElementById("total-items").innerText = "Total items: " + itemCount;
+    document.getElementById("total-price").innerText = "Total price: $" + totalPrice.toFixed(2);
+}
+</script>
+
+</head>
+<body>
+    <form>
+        <label for="item-count">Enter the number of items:</label><br>
+        <input type="number" id="item-count" name="item-count" min="0" placeholder="enter amount"><br><br>
+        <button type="button" onclick="calculateTotal()">Submit</button>
+    </form>
+    <div id="result">
+        <p id="total-items">Total items: 0</p>
+        <p id="total-price">Total price: $0.00</p>
+    </div>
+    <a href="index.html">
+    <button>Home</button></a>
+</body>
+</html>

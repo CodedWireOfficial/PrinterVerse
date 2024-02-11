@@ -1,0 +1,5 @@
+/* Applies to the entire body of the HTML document (except where overridden by more specific
+selectors). */
+body {
+  background-color: red;
+}
